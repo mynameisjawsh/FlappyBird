@@ -1,5 +1,7 @@
 require("collisions")
 
+require("start")
+
 require("gameworld")
 require("player")
 require("pipe")
@@ -16,23 +18,23 @@ GameState.play = false
 GameState.gameOver = false
 
 function love.load()
-	World:load()
-	Player:load()
-	Pipe:load()
+	if GameState.boot then
+		Start:load()
+	end
 end
 
 
 function love.update(dt)
-	World:update(dt)
-	Player:update(dt)
-	Pipe:update(dt)
+	if GameState.boot then
+		Start:update(dt)
+	end
 end
 
 
 function love.draw()
-	Pipe:draw()
-	World:draw()
-	Player:draw()
+	if GameState.boot then
+		Start:draw()
+	end
 end
 
 
