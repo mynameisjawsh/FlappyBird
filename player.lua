@@ -20,11 +20,11 @@ end
 
 function Player:collide()
 	if checkCollision(self, World.Ground) then
-		love.load()
+		playerDied()
 	end
 
 	if checkCollision(self, Pipe.TopPipe) or checkCollision(self, Pipe.BottomPipe) then
-		love.load()
+		playerDied()
 	end
 
 	if checkPlayerPos(self, Pipe.TopPipe) then
