@@ -1,4 +1,5 @@
 require("collisions")
+require("statehandler")
 
 require("start")
 
@@ -41,6 +42,14 @@ end
 
 function love.mousepressed(x, y, button)
 	if button == 1 then
-		Player:flap()
+		if GameState.boot then
+
+			if x > PlayButton.x - 60 and x < PlayButton.x - 60 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
+				play()
+			end
+		
+		elseif GameState.play then
+			Player:flap()
+		end
 	end
 end
