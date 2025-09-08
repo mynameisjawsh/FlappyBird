@@ -21,6 +21,10 @@ function Player:collide()
 	if checkCollision(self, World.Ground) then
 		self.y = World.Ground.y - self.height
 	end
+
+	if checkCollision(self, Pipe.TopPipe) or checkCollision(self, Pipe.BottomPipe) then
+		love.load()
+	end
 end
 
 
