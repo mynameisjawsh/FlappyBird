@@ -21,7 +21,7 @@ GameState.boot = true
 GameState.play = false
 GameState.gameOver = false
 
-local highScore = 0
+highScore = 0
 
 function love.load()
 	if GameState.boot then
@@ -52,6 +52,14 @@ function love.draw()
 		Play:draw()
 	elseif GameState.gameOver then
 		GameOver:draw()
+	end
+end
+
+
+function saveHighScore(newScore)
+	if newScore > highScore then
+		highScore = newScore
+		love.filesystem.write("highscores.txt", tostring(highScore))
 	end
 end
 
