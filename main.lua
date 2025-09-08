@@ -44,7 +44,6 @@ function love.draw()
 	elseif GameState.play then
 		Play:draw()
 	end
-	end
 end
 
 
@@ -54,6 +53,10 @@ function love.mousepressed(x, y, button)
 
 			if x > PlayButton.x - 60 and x < PlayButton.x - 60 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
 				play()
+			end
+
+			if x > ExitButton.x - 60 and x < ExitButton.x - 60 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+				love.event.quit()
 			end
 		
 		elseif GameState.play then
