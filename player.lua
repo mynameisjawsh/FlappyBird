@@ -20,6 +20,11 @@ function Player:update(dt)
 end
 
 
+function Player:flap()
+	self.yVel = -150
+end
+
+
 function Player:draw()
 	love.graphics.setColor(1, 1, 0.4)
 	love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
