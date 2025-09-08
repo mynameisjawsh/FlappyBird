@@ -65,6 +65,12 @@ function love.mousepressed(x, y, button)
 			if x > ExitButton.x - 60 and x < ExitButton.x - 60 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
 				love.event.quit()
 			end
+
+		elseif GameState.gameOver then
+
+			if x > RetryButton.x - 60 and x < RetryButton.x - 60 + RetryButton.width and y > RetryButton.y and y < RetryButton.y + RetryButton.height then
+				retry()
+			end
 		
 		elseif GameState.play then
 			Player:flap()

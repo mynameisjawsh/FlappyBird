@@ -14,3 +14,12 @@ function playerDied()
 		love.load()
 	end
 end
+
+
+function retry()
+	if GameState.gameOver then
+		GameState.gameOver = false
+		GameState.play = true
+		love.load()
+	end
+end
