@@ -5,6 +5,7 @@ require("start")
 require("gameworld")
 require("player")
 require("pipe")
+require("button")
 
 Screen = {}
 Screen.x = 0
