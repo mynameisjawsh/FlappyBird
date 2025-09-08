@@ -25,7 +25,17 @@ function Player:collide()
 	if checkCollision(self, Pipe.TopPipe) or checkCollision(self, Pipe.BottomPipe) then
 		love.load()
 	end
+
+	if checkPlayerPos(self, Pipe.TopPipe) then
+		self:score()
+	end
 end
+
+
+function Player:score()
+	World.ScoreBoard.playerScore = World.ScoreBoard.playerScore + 1	
+end
+
 
 
 function Player:move(dt)
