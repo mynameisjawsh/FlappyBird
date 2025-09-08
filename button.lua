@@ -1,13 +1,18 @@
 Button = {}
 
-function Button:load()
-	self.font = love.graphics.newFont(32)
-	self.text = "button"
-	self.x = Screen.width / 2
-	self.xOffSet = 60
-	self.y = Screen.height / 2
-	self.width = 120
-	self.height = 50
+self.xOffSet = 60
+
+function Button.new(font, text, x, y, width, height)
+	local instance = setmetatable({ __index = Button })
+
+	instance.font = font
+	instance.text = text
+	instance.x = x
+	instance.y = y
+	instance.width = width
+	instance.height = height
+
+	return instance
 end
 
 

@@ -10,8 +10,6 @@ function Start:load()
 		y = 50,
 		xOffSet = 108
 	}
-
-	Button:load()
 end
 
 
