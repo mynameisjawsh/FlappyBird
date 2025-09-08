@@ -11,12 +11,26 @@ end
 
 
 function Player:update(dt)
-	self.yVel = self.yVel + self.gravity * dt
-	self.y = self.y + self.yVel * dt
+	self:applyGravity(dt)
+	self:move(dt)
+	self:collide()
+end
 
+
+function Player:collide()
 	if checkCollision(self, World.Ground) then
 		self.y = World.Ground.y - self.height
 	end
+end
+
+
+function Player:move(dt)
+	self.y = self.y + self.yVel * dt
+end
+
+
+function Player:applyGravity(dt)
+	self.yVel = self.yVel + self.gravity * dt
 end
 
 
