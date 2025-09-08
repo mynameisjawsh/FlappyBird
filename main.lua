@@ -25,9 +25,9 @@ end
 
 
 function love.draw()
+	Pipe:draw()
 	World:draw()
 	Player:draw()
-	Pipe:draw()
 end
 
 
