@@ -2,6 +2,7 @@ require("collisions")
 
 require("gameworld")
 require("player")
+require("pipe")
 
 Screen = {}
 Screen.x = 0
@@ -12,18 +13,21 @@ Screen.height = love.graphics.getHeight()
 function love.load()
 	World:load()
 	Player:load()
+	Pipe:load()
 end
 
 
 function love.update(dt)
 	World:update(dt)
 	Player:update(dt)
+	Pipe:update(dt)
 end
 
 
 function love.draw()
 	World:draw()
 	Player:draw()
+	Pipe:draw()
 end
 
 
