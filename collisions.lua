@@ -14,3 +14,12 @@ function checkPipePos(a, b)
 		return false
 	end
 end
+
+
+function checkPlayerPos(a, b)
+	if a.x > b.x + b.width then
+		return true
+	else
+		return false
+	end
+end
