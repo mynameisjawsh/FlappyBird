@@ -1,0 +1,7 @@
+function love.conf(t)
+	t.title = "Pong"
+	t.version = "11.5"
+	t.console = true
+	t.window.width = 288
+	t.window.height = 512
+end
