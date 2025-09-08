@@ -21,6 +21,8 @@ GameState.boot = true
 GameState.play = false
 GameState.gameOver = false
 
+local highScore = 0
+
 function love.load()
 	if GameState.boot then
 		Start:load()

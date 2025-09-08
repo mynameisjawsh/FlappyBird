@@ -9,6 +9,8 @@ function GameOver:load()
 		xOffSet = 108
 	}
 
+	
+
 	RetryButton = Button.new(love.graphics.newFont(32), "Retry", Screen.width / 2, Screen.height / 2, 120, 50)
 	ExitButton = Button.new(love.graphics.newFont(32), "Exit", Screen.width / 2, Screen.height / 2 + 70, 120, 50)
 end
