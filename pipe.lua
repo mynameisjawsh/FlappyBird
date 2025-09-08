@@ -7,7 +7,7 @@ function Pipe:load()
 		x = Screen.width,
 		y = Screen.y,
 		width = 75,
-		height = love.math.random(50, 300)
+		height = love.math.random(50, 275)
 	}
 	self.MiddleGap = {
 		x = self.TopPipe.x,
