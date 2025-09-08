@@ -1,4 +1,5 @@
 require("gameworld")
+require("player")
 
 Screen = {}
 Screen.x = 0
@@ -8,14 +9,17 @@ Screen.height = love.graphics.getHeight()
 
 function love.load()
 	World:load()
+	Player:load()
 end
 
 
 function love.update(dt)
 	World:update(dt)
+	Player:update(dt)
 end
 
 
 function love.draw()
 	World:draw()
+	Player:draw()
 end
