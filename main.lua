@@ -1,3 +1,5 @@
+require("collisions")
+
 require("gameworld")
 require("player")
 
