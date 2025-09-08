@@ -5,3 +5,12 @@ function checkCollision(a, b)
 		return false
 	end
 end
+
+
+function checkPipePos(a, b)
+	if a.x + a.width < b.x then
+		return true
+	else
+		return false
+	end
+end
