@@ -17,7 +17,7 @@ end
 
 
 function Start:update(dt)
-	Button:update()
+
 end
 
 
