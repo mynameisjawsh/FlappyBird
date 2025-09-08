@@ -10,6 +10,11 @@ Screen.y = 0
 Screen.width = love.graphics.getWidth()
 Screen.height = love.graphics.getHeight()
 
+GameState = {}
+GameState.boot = true
+GameState.play = false
+GameState.gameOver = false
+
 function love.load()
 	World:load()
 	Player:load()
