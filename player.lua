@@ -13,6 +13,10 @@ end
 function Player:update(dt)
 	self.yVel = self.yVel + self.gravity * dt
 	self.y = self.y + self.yVel * dt
+
+	if checkCollision(self, World.Ground) then
+		self.y = World.Ground.y - self.height
+	end
 end
 
 
