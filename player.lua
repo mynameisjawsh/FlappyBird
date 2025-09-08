@@ -7,6 +7,7 @@ function Player:load()
 	self.height = 20
 	self.yVel = 0
 	self.gravity = 200
+	self.scored = false
 end
 
 
@@ -28,12 +29,17 @@ function Player:collide()
 
 	if checkPlayerPos(self, Pipe.TopPipe) then
 		self:score()
+	else
+		self.scored = false
 	end
 end
 
 
 function Player:score()
-	World.ScoreBoard.playerScore = World.ScoreBoard.playerScore + 1	
+	if self.scored == false then
+		World.ScoreBoard.playerScore = World.ScoreBoard.playerScore + 1
+		self.scored = true
+	end
 end
 
 
