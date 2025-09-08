@@ -10,6 +10,9 @@ function Start:load()
 		y = 50,
 		xOffSet = 108
 	}
+
+	PlayButton = Button.new(love.graphics.newFont(32), "Play", Screen.width / 2, Screen.height / 2, 120, 50)
+	ExitButton = Button.new(love.graphics.newFont(32), "Exit", Screen.width / 2, Screen.height / 2 + 70, 120, 50)
 end
 
 
@@ -23,5 +26,6 @@ function Start:draw()
 	love.graphics.setFont(self.Title.font)
 	love.graphics.print(self.Title.text, self.Title.x - self.Title.xOffSet, self.Title.y)
 
-	Button:draw()
+	PlayButton:draw()
+	ExitButton:draw()
 end

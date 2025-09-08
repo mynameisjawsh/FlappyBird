@@ -1,9 +1,10 @@
 Button = {}
 
-self.xOffSet = 60
+Button.xOffSet = 60
 
 function Button.new(font, text, x, y, width, height)
-	local instance = setmetatable({ __index = Button })
+	local instance = {}
+	setmetatable(instance, { __index = Button })
 
 	instance.font = font
 	instance.text = text
