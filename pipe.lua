@@ -1,6 +1,8 @@
 Pipe = {}
 
 function Pipe:load()
+	self.speed = 100
+
 	self.TopPipe = {
 		x = 150,
 		y = Screen.y,
@@ -23,7 +25,8 @@ end
 
 
 function Pipe:update(dt)
-
+	self.TopPipe.x = self.TopPipe.x - self.speed * dt
+	self.BottomPipe.x = self.BottomPipe.x - self.speed * dt
 end
 
 
