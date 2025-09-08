@@ -10,11 +10,13 @@ function Start:load()
 		y = 50,
 		xOffSet = 108
 	}
+
+	Button:load()
 end
 
 
 function Start:update(dt)
-
+	Button:update()
 end
 
 
@@ -22,4 +24,6 @@ function Start:draw()
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.Title.font)
 	love.graphics.print(self.Title.text, self.Title.x - self.Title.xOffSet, self.Title.y)
+
+	Button:draw()
 end
