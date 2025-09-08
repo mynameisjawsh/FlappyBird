@@ -3,6 +3,7 @@ require("statehandler")
 
 require("start")
 require("play")
+require("gameover")
 
 require("gameworld")
 require("player")
@@ -25,6 +26,8 @@ function love.load()
 		Start:load()
 	elseif GameState.play then
 		Play:load()
+	elseif GameState.gameOver then
+		GameOver:load()
 	end
 end
 
@@ -34,6 +37,8 @@ function love.update(dt)
 		Start:update(dt)
 	elseif GameState.play then
 		Play:update(dt)
+	elseif GameState.gameOver then
+		GameOver:update()
 	end
 end
 
@@ -43,6 +48,8 @@ function love.draw()
 		Start:draw()
 	elseif GameState.play then
 		Play:draw()
+	elseif GameState.gameOver then
+		GameOver:draw()
 	end
 end
 
