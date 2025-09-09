@@ -68,11 +68,11 @@ function love.mousepressed(x, y, button)
 	if button == 1 then
 		if GameState.boot then
 
-			if x > PlayButton.x - 60 and x < PlayButton.x - 60 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
+			if x > PlayButton.x - 37.5 and x < PlayButton.x - 37.5 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
 				play()
 			end
 
-			if x > ExitButton.x - 60 and x < ExitButton.x - 60 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
 				love.event.quit()
 			end
 

@@ -1,12 +1,14 @@
 Button = {}
 
-Button.xOffSet = 60
+Button.xOffSet = 37.5
+Button.width = 75
+Button.height = 40
 
-function Button.new(font, text, x, y, width, height)
+function Button.new(sprite, text, x, y, width, height)
 	local instance = {}
 	setmetatable(instance, { __index = Button })
 
-	instance.font = font
+	instance.sprite = sprite
 	instance.text = text
 	instance.x = x
 	instance.y = y
@@ -24,9 +26,5 @@ end
 
 function Button:draw()
 	love.graphics.setColor(1, 1, 1)
-	love.graphics.rectangle("fill", self.x - self.xOffSet, self.y, self.width, self.height)
-
-	love.graphics.setColor(0, 0, 0)
-	love.graphics.setFont(self.font)
-	love.graphics.print(self.text, self.x - self.xOffSet, self.y)
+	love.graphics.draw(self.sprite, self.x - self.xOffSet, self.y)
 end
