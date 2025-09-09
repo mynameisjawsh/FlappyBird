@@ -1,7 +1,7 @@
 Start = {}
 
 function Start:load()
-	love.graphics.setBackgroundColor(0, 0.6, 1)
+	World:load()	
 
 	self.Title = {
 		fontFill = love.graphics.newFont("Assets/Fonts/DIMITRI_.TTF", 52),
@@ -22,11 +22,15 @@ end
 
 
 function Start:update(dt)
-
+	World:scrollBG(dt)
+	World:scrollGround(dt)
 end
 
 
 function Start:draw()
+	World:draw()
+	World:drawGround()
+
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.Title.fontOutline)
 	love.graphics.printf(self.Title.text, self.Title.x + 2, self.Title.y - 2, 288, "center")
