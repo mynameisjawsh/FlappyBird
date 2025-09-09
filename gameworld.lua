@@ -11,6 +11,7 @@ function World:load()
 	} 
 
 	self.Ground = {
+		sprite = love.graphics.newImage("Assets/Sprites/Exports/Ground.png"),
 		x = Screen.x,
 		y = Screen.height - 112,
 		width = Screen.width,
@@ -49,6 +50,6 @@ end
 
 
 function World:drawGround()
-	love.graphics.setColor(0, 0.75, 0)
-	love.graphics.rectangle("fill", self.Ground.x, self.Ground.y, self.Ground.width, self.Ground.height)
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.draw(self.Ground.sprite, self.Ground.x, self.Ground.y)
 end
