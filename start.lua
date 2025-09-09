@@ -12,8 +12,8 @@ function Start:load()
 	}
 
 	if love.filesystem.getInfo("highscores.txt") then
-		local savedScoreString = love.filesystem.read("highscores.txt")
-		highScore = tonumber(savedScoreString) or 0
+		savedScore = love.filesystem.read("highscores.txt")
+		highScore = tonumber(savedScore)
 	end
 
 	PlayButton = Button.new(love.graphics.newFont(32), "Play", Screen.width / 2, Screen.height / 2, 120, 50)
@@ -31,7 +31,7 @@ function Start:draw()
 	love.graphics.setFont(self.Title.font)
 	love.graphics.print(self.Title.text, self.Title.x - self.Title.xOffSet, self.Title.y)
 
-	love.graphics.print(highScore, Screen.width / 2, Screen.height / 2)
+	love.graphics.print(highScore, Screen.width / 2, Screen.height / 2 - 75)
 
 	PlayButton:draw()
 	ExitButton:draw()
