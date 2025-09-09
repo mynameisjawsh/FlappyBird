@@ -15,7 +15,8 @@ function World:load()
 		x = Screen.x,
 		y = Screen.height - 112,
 		width = Screen.width,
-		height = Screen.height
+		height = Screen.height,
+		speed = 100
 	}
 	self.ScoreBoard = {
 		font = love.graphics.newFont(64),
@@ -31,6 +32,12 @@ function World:update(dt)
 
 	if checkScrollPos(self.BG, Screen) then
 		self.BG.x = Screen.x
+	end
+
+	self.Ground.x = self.Ground.x - self.Ground.speed * dt
+
+	if checkScrollPos(self.Ground, Screen) then
+		self.Ground.x = Screen.x
 	end
 end
 
@@ -52,4 +59,5 @@ end
 function World:drawGround()
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.draw(self.Ground.sprite, self.Ground.x, self.Ground.y)
+	love.graphics.draw(self.Ground.sprite, self.Ground.x + self.Ground.width, self.Ground.y)
 end
