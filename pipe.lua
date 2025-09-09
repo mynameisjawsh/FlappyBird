@@ -1,17 +1,19 @@
 Pipe = {}
 
 function Pipe:load()
+	self.spriteTop = love.graphics.newImage("Assets/Sprites/Exports/PipeTop.png")
+	self.spriteTube = love.graphics.newImage("Assets/Sprites/Exports/PipeTube.png")
 	self.speed = 100
 
 	self.TopPipe = {
 		x = Screen.width,
-		y = Screen.y,
+		y = love.math.random(0, -185),
 		width = 75,
-		height = love.math.random(50, 275)
+		height = self.spriteTube:getHeight()
 	}
 	self.MiddleGap = {
 		x = self.TopPipe.x,
-		y = self.TopPipe.height,
+		y = self.TopPipe.y + self.TopPipe.height,
 		width = self.TopPipe.width,
 		height = 100
 	}
@@ -45,6 +47,9 @@ end
 
 function Pipe:draw()
 	love.graphics.setColor(0.55, 1, 0.55)
-	love.graphics.rectangle("fill", self.TopPipe.x, self.TopPipe.y, self.TopPipe.width, self.TopPipe.height)
-	love.graphics.rectangle("fill", self.BottomPipe.x, self.BottomPipe.y, self.BottomPipe.width, self.BottomPipe.height)
+	love.graphics.draw(self.spriteTop, self.TopPipe.x, self.MiddleGap.y, nil, 1, -1, 0)
+	love.graphics.draw(self.spriteTube, self.TopPipe.x, self.TopPipe.y - self.MiddleGap.height)
+
+	love.graphics.draw(self.spriteTop, self.BottomPipe.x, self.BottomPipe.y)
+	love.graphics.draw(self.spriteTube, self.BottomPipe.x, self.BottomPipe.y + self.MiddleGap.height)
 end
