@@ -1,12 +1,23 @@
 GameOver = {}
 
 function GameOver:load()
-	World:load()
+	self.BG = {
+		sprite = love.graphics.newImage("Assets/Sprites/Exports/BG.png"),
+		x = 0,
+		y = 0
+	}
+
+	self.Ground = {
+		sprite = love.graphics.newImage("Assets/Sprites/Exports/Ground.png"),
+		x = 0,
+		y = Screen.height - 112
+	}
 
 	self.Message = {
-		font = love.graphics.newFont(32),
+		fontFill = love.graphics.newFont("Assets/Fonts/DIMITRI_.TTF", 48),
+		fontOutline = love.graphics.newFont("Assets/Fonts/DIMIS___.TTF", 48),
 		text = "Game Over!",
-		x = Screen.width / 2,
+		x = 0,
 		y = 50,
 		xOffSet = 108
 	}
@@ -26,14 +37,23 @@ end
 
 
 function GameOver:draw()
-	World:draw()
-	World:drawGround()
-
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.draw(self.BG.sprite, self.BG.x, self.BG.y)
+	love.graphics.draw(self.Ground.sprite, self.Ground.x, self.Ground.y)
+	
 	love.graphics.setColor(0, 0, 0)
-	love.graphics.setFont(self.Message.font)
-	love.graphics.print(self.Message.text, self.Message.x - self.Message.xOffSet, self.Message.y)
-
-	love.graphics.print(World.ScoreBoard.playerScore, self.Message.x, 100)
+	love.graphics.setFont(self.Message.fontOutline)
+	love.graphics.printf(self.Message.text, self.Message.x + 1.75, self.Message.y - 1.75, 288, "center")
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.setFont(self.Message.fontFill)
+	love.graphics.printf(self.Message.text, self.Message.x, self.Message.y, 288, "center")
+	
+	love.graphics.setColor(0, 0, 0)
+	love.graphics.setFont(self.Message.fontOutline)
+	love.graphics.printf(World.ScoreBoard.playerScore, self.Message.x + 1.75, 150 - 1.75, 288, "center")
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.setFont(self.Message.fontFill)
+	love.graphics.printf(World.ScoreBoard.playerScore, self.Message.x, 150, 288, "center")
 
 	RetryButton:draw()
 	ExitButton:draw()
