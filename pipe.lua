@@ -8,7 +8,7 @@ function Pipe:load()
 	self.TopPipe = {
 		x = Screen.width,
 		y = love.math.random(0, -185),
-		width = 75,
+		width = self.spriteTube:getWidth(),
 		height = self.spriteTube:getHeight()
 	}
 	self.MiddleGap = {

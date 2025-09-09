@@ -7,7 +7,7 @@ function World:load()
 		y = Screen.y,
 		width = Screen.width,
 		height = Screen.height,
-		speed = 110
+		speed = 50
 	} 
 
 	self.Ground = {
