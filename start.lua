@@ -4,11 +4,11 @@ function Start:load()
 	love.graphics.setBackgroundColor(0, 0.6, 1)
 
 	self.Title = {
-		font = love.graphics.newFont(52),
+		fontFill = love.graphics.newFont("Assets/Fonts/DIMITRI_.TTF", 52),
+		fontOutline = love.graphics.newFont("Assets/Fonts/DIMIS___.TTF", 52),
 		text = "Lua Bird",
-		x = Screen.width / 2,
-		y = 50,
-		xOffSet = 108
+		x = 0,
+		y = 50
 	}
 
 	if love.filesystem.getInfo("highscores.txt") then
@@ -28,10 +28,20 @@ end
 
 function Start:draw()
 	love.graphics.setColor(0, 0, 0)
-	love.graphics.setFont(self.Title.font)
-	love.graphics.print(self.Title.text, self.Title.x - self.Title.xOffSet, self.Title.y)
+	love.graphics.setFont(self.Title.fontOutline)
+	love.graphics.printf(self.Title.text, self.Title.x + 2, self.Title.y - 2, 288, "center")
 
-	love.graphics.print(highScore, Screen.width / 2, Screen.height / 2 - 75)
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.setFont(self.Title.fontFill)
+	love.graphics.printf(self.Title.text, self.Title.x, self.Title.y, 288, "center")
+	
+	love.graphics.setColor(0, 0, 0)
+	love.graphics.setFont(self.Title.fontOutline)
+	love.graphics.printf(highScore, self.Title.x, self.Title.y * 2, 288, "center")
+
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.setFont(self.Title.fontFill)
+	love.graphics.printf(highScore, self.Title.x - 2, (self.Title.y * 2) + 2, 288, "center")
 
 	PlayButton:draw()
 	ExitButton:draw()
