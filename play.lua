@@ -15,7 +15,9 @@ end
 
 
 function Play:draw()
-	Pipe:draw()
 	World:draw()
+	Pipe:draw()
+	World:drawScoreBoard()
+	World:drawGround()
 	Player:draw()
 end
