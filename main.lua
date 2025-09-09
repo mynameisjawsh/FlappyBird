@@ -45,14 +45,6 @@ function love.update(dt)
 end
 
 
-function saveHighScore(newScore)
-	if newScore > highScore then
-		highScore = newScore
-		love.filesystem.write("highscores.txt", tostring(highScore))
-	end
-end
-
-
 function love.draw()
 	if GameState.boot then
 		Start:draw()
@@ -60,6 +52,14 @@ function love.draw()
 		Play:draw()
 	elseif GameState.gameOver then
 		GameOver:draw()
+	end
+end
+
+
+function saveHighScore(newScore)
+	if newScore > highScore then
+		highScore = newScore
+		love.filesystem.write("highscores.txt", tostring(highScore))
 	end
 end
 
