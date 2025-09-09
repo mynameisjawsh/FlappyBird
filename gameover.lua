@@ -1,6 +1,8 @@
 GameOver = {}
 
 function GameOver:load()
+	World:load()
+
 	self.Message = {
 		font = love.graphics.newFont(32),
 		text = "Game Over!",
@@ -11,8 +13,10 @@ function GameOver:load()
 	
 	saveHighScore(World.ScoreBoard.playerScore)
 
-	RetryButton = Button.new(love.graphics.newFont(32), "Retry", Screen.width / 2, Screen.height / 2, 120, 50)
-	ExitButton = Button.new(love.graphics.newFont(32), "Exit", Screen.width / 2, Screen.height / 2 + 70, 120, 50)
+	RetryButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/RetryButton.png"), "Retry",
+							Screen.width / 2, Screen.height / 2, Button.width, Button.height)
+	ExitButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/ExitButton.png"), "Exit",
+							Screen.width / 2, Screen.height / 2 + 70, Button.width, Button.height)
 end
 
 
@@ -22,6 +26,9 @@ end
 
 
 function GameOver:draw()
+	World:draw()
+	World:drawGround()
+
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.Message.font)
 	love.graphics.print(self.Message.text, self.Message.x - self.Message.xOffSet, self.Message.y)
