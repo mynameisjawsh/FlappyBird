@@ -28,16 +28,25 @@ end
 
 
 function World:update(dt)
-	self.BG.x = self.BG.x - self.BG.speed * dt
+	self:scrollBG(dt)
+	self:scrollGround(dt)
+end
 
-	if checkScrollPos(self.BG, Screen) then
-		self.BG.x = Screen.x
-	end
 
+function World:scrollGround(dt)
 	self.Ground.x = self.Ground.x - self.Ground.speed * dt
 
 	if checkScrollPos(self.Ground, Screen) then
 		self.Ground.x = Screen.x
+	end
+end
+
+
+function World:scrollBG(dt)
+	self.BG.x = self.BG.x - self.BG.speed * dt
+
+	if checkScrollPos(self.BG, Screen) then
+		self.BG.x = Screen.x
 	end
 end
 
