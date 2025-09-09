@@ -31,7 +31,7 @@ end
 
 
 function Pipe:resetPipe()
-	if checkPipePos(self.TopPipe, Screen) then
+	if checkScrollPos(self.TopPipe, Screen) then
 		self:load()
 	end
 end

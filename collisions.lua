@@ -7,7 +7,7 @@ function checkCollision(a, b)
 end
 
 
-function checkPipePos(a, b)
+function checkScrollPos(a, b)
 	if a.x + a.width < b.x then
 		return true
 	else

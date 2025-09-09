@@ -7,7 +7,7 @@ function World:load()
 		y = Screen.y,
 		width = Screen.width,
 		height = Screen.height,
-		speed = 150
+		speed = 110
 	} 
 
 	self.Ground = {
@@ -26,13 +26,18 @@ end
 
 
 function World:update(dt)
-	
+	self.BG.x = self.BG.x - self.BG.speed * dt
+
+	if checkScrollPos(self.BG, Screen) then
+		self.BG.x = Screen.x
+	end
 end
 
 
 function World:draw()
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.draw(self.BG.sprite, self.BG.x, self.BG.y)
+	love.graphics.draw(self.BG.sprite, self.BG.x + self.BG.width, self.BG.y)
 end
 
 
