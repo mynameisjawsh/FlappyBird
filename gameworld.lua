@@ -19,8 +19,9 @@ function World:load()
 		speed = 100
 	}
 	self.ScoreBoard = {
-		font = love.graphics.newFont(64),
-		x = Screen.width / 2,
+		fontFill = love.graphics.newFont("Assets/Fonts/DIMITRI_.TTF", 64),
+		fontOutline = love.graphics.newFont("Assets/Fonts/DIMIS___.TTF", 64),
+		x = 0,
 		y = 50,
 		playerScore = 0
 	}
@@ -60,8 +61,12 @@ end
 
 function World:drawScoreBoard()
 	love.graphics.setColor(0, 0, 0)
-	love.graphics.setFont(self.ScoreBoard.font)
-	love.graphics.print(self.ScoreBoard.playerScore, self.ScoreBoard.x, self.ScoreBoard.y)
+	love.graphics.setFont(self.ScoreBoard.fontOutline)
+	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x + 2, self.ScoreBoard.y - 3, 288, "center")
+
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.setFont(self.ScoreBoard.fontFill)
+	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x, self.ScoreBoard.y, 288, "center")
 end
 
 
