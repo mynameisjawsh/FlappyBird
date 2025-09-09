@@ -1,10 +1,11 @@
 Player = {}
 
 function Player:load()
+	self.sprite = love.graphics.newImage("Assets/Sprites/Exports/Player.png")
 	self.x = 50
 	self.y = Screen.height / 2
-	self.width = 20
-	self.height = 20
+	self.width = self.sprite:getWidth()
+	self.height = self.sprite:getHeight()
 	self.yVel = 0
 	self.gravity = 200
 	self.scored = false
@@ -62,6 +63,6 @@ end
 
 
 function Player:draw()
-	love.graphics.setColor(1, 1, 0.4)
-	love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+	love.graphics.setColor(1, 1, 1)
+	love.graphics.draw(self.sprite, self.x, self.y)
 end
