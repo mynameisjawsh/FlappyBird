@@ -101,7 +101,8 @@ function love.mousepressed(x, y, button)
 			else
 				ExitButton.pressed = false
 			end
-
+		elseif GameState.play then
+			Player:flap()
 		end
 	end
 end
@@ -128,9 +129,6 @@ function love.mousereleased(x, y, button)
 			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
 				love.event.quit()
 			end
-		
-		elseif GameState.play then
-			Player:flap()
 		end
 	end
 end
