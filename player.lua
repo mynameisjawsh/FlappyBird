@@ -38,6 +38,7 @@ end
 
 function Player:score()
 	if self.scored == false then
+		Sound:playGoal()
 		World.ScoreBoard.playerScore = World.ScoreBoard.playerScore + 1
 		self.scored = true
 	end

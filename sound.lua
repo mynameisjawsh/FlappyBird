@@ -9,10 +9,6 @@ end
 
 
 function Sound:update()
-	if checkPlayerPos(Player, Pipe.TopPipe) then
-		love.audio.play(self.goal)
-	end
-
 	if checkCollision(Player, World.Ground) or checkCollision(Player, Pipe.TopPipe) or checkCollision(Player, Pipe.BottomPipe) then
 		love.audio.play(self.death)
 	end
@@ -25,6 +21,11 @@ end
 
 
 function Sound:playFlap()
-	love.audio.stop()
+	love.audio.stop(self.flap)
 	love.audio.play(self.flap)
+end
+
+
+function Sound:playGoal()
+	love.audio.play(self.goal)
 end
