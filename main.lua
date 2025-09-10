@@ -1,5 +1,6 @@
 require("collisions")
 require("statehandler")
+require("sound")
 
 require("start")
 require("play")
@@ -24,6 +25,8 @@ GameState.gameOver = false
 highScore = 0
 
 function love.load()
+	Sound:load()
+
 	if GameState.boot then
 		Start:load()
 	elseif GameState.play then
@@ -69,12 +72,14 @@ function love.mousepressed(x, y, button)
 		if GameState.boot then
 			
 			if x > PlayButton.x - 37.5 and x < PlayButton.x - 37.5 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
+				Sound:playClickButton()	
 				PlayButton.pressed = true
 			else
 				PlayButton.pressed = false
 			end
 
 			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+				Sound:playClickButton()
 				ExitButton.pressed = true
 			else
 				ExitButton.pressed = false
@@ -82,6 +87,7 @@ function love.mousepressed(x, y, button)
 		elseif GameState.gameOver then
 			
 			if x > RetryButton.x - 37.5 and x < RetryButton.x - 37.5 + RetryButton.width and y > RetryButton.y and y < RetryButton.y + RetryButton.height then
+				Sound:playClickButton()
 				RetryButton.pressed = true
 			else
 				RetryButton.pressed = false
@@ -89,6 +95,7 @@ function love.mousepressed(x, y, button)
 
 
 			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+				Sound:playClickButton()
 				ExitButton.pressed = true
 			else
 				ExitButton.pressed = false
