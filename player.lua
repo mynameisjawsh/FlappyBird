@@ -56,6 +56,8 @@ end
 
 
 function Player:flap()
+	Sound:playFlap()
+
 	if self.y > Screen.y then
 		self.yVel = -150
 	end
