@@ -7,7 +7,7 @@ function Player:load()
 	self.width = self.sprite:getWidth()
 	self.height = self.sprite:getHeight()
 	self.yVel = 0
-	self.gravity = 200
+	self.gravity = 300
 	self.scored = false
 end
 
@@ -60,7 +60,7 @@ function Player:flap()
 	Sound:playFlap()
 
 	if self.y > Screen.y then
-		self.yVel = -150
+		self.yVel = -170
 	end
 end
 
