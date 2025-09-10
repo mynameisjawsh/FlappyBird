@@ -24,10 +24,12 @@ function GameOver:load()
 	
 	saveHighScore(World.ScoreBoard.playerScore)
 
-	RetryButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/RetryButton.png"), "Retry",
-							Screen.width / 2, Screen.height / 2, Button.width, Button.height)
-	ExitButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/ExitButton.png"), "Exit",
-							Screen.width / 2, Screen.height / 2 + 70, Button.width, Button.height)
+	RetryButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/RetryButton.png"),
+				love.graphics.newImage("Assets/Sprites/Exports/RetryButtonPressed.png"), "Retry", Screen.width / 2, Screen.height / 2,
+				Button.width, Button.height, false)
+	ExitButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/ExitButton.png"),
+				love.graphics.newImage("Assets/Sprites/Exports/ExitButtonPressed.png"), "Exit", Screen.width / 2, Screen.height / 2 + 70,
+				Button.width, Button.height, false)
 end
 
 

@@ -67,6 +67,41 @@ end
 function love.mousepressed(x, y, button)
 	if button == 1 then
 		if GameState.boot then
+			
+			if x > PlayButton.x - 37.5 and x < PlayButton.x - 37.5 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
+				PlayButton.pressed = true
+			else
+				PlayButton.pressed = false
+			end
+
+			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+				ExitButton.pressed = true
+			else
+				ExitButton.pressed = false
+			end
+		elseif GameState.gameOver then
+			
+			if x > RetryButton.x - 37.5 and x < RetryButton.x - 37.5 + RetryButton.width and y > RetryButton.y and y < RetryButton.y + RetryButton.height then
+				RetryButton.pressed = true
+			else
+				RetryButton.pressed = false
+			end
+
+
+			if x > ExitButton.x - 37.5 and x < ExitButton.x - 37.5 + ExitButton.width and y > ExitButton.y and y < ExitButton.y + ExitButton.height then
+				ExitButton.pressed = true
+			else
+				ExitButton.pressed = false
+			end
+
+		end
+	end
+end
+
+
+function love.mousereleased(x, y, button)
+	if button == 1 then
+		if GameState.boot then
 
 			if x > PlayButton.x - 37.5 and x < PlayButton.x - 37.5 + PlayButton.width and y > PlayButton.y and y < PlayButton.y + PlayButton.height then
 				play()

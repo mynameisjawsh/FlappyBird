@@ -16,8 +16,12 @@ function Start:load()
 		highScore = tonumber(savedScore)
 	end
 
-	PlayButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/PlayButton.png"), "Play", Screen.width / 2, Screen.height / 2, Button.width, Button.height)
-	ExitButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/ExitButton.png"), "Exit", Screen.width / 2, Screen.height / 2 + 70, Button.width, Button.height)
+	PlayButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/PlayButton.png"),
+				love.graphics.newImage("Assets/Sprites/Exports/PlayButtonPressed.png"), "Play", Screen.width / 2, Screen.height / 2,
+				Button.width, Button.height, false)
+	ExitButton = Button.new(love.graphics.newImage("Assets/Sprites/Exports/ExitButton.png"),
+				love.graphics.newImage("Assets/Sprites/Exports/ExitButtonPressed.png"), "Exit", Screen.width / 2, Screen.height / 2 + 70,
+				Button.width, Button.height, false)
 end
 
 
