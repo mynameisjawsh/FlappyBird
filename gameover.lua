@@ -33,11 +33,6 @@ function GameOver:load()
 end
 
 
-function GameOver:update()
-
-end
-
-
 function GameOver:draw()
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.draw(self.BG.sprite, self.BG.x, self.BG.y)

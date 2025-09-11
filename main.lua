@@ -43,8 +43,6 @@ function love.update(dt)
 	elseif GameState.play then
 		Play:update(dt)
 		Sound:update()
-	elseif GameState.gameOver then
-		GameOver:update()
 	end
 end
 

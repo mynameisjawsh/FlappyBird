@@ -21,11 +21,6 @@ function Button.new(sprite, spritePressed, text, x, y, width, height, pressed)
 end
 
 
-function Button:update()
-
-end
-
-
 function Button:draw()
 	love.graphics.setColor(1, 1, 1)
 
