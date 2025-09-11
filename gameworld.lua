@@ -62,11 +62,11 @@ end
 function World:drawScoreBoard()
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.ScoreBoard.fontOutline)
-	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x + 2, self.ScoreBoard.y - 3, 288, "center")
+	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x + 2, self.ScoreBoard.y - 3, Screen.width, "center")
 
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.setFont(self.ScoreBoard.fontFill)
-	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x, self.ScoreBoard.y, 288, "center")
+	love.graphics.printf(self.ScoreBoard.playerScore, self.ScoreBoard.x, self.ScoreBoard.y, Screen.width, "center")
 end
 
 

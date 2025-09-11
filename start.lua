@@ -37,19 +37,19 @@ function Start:draw()
 
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.Title.fontOutline)
-	love.graphics.printf(self.Title.text, self.Title.x + 2, self.Title.y - 2, 288, "center")
+	love.graphics.printf(self.Title.text, self.Title.x + 2, self.Title.y - 2, Screen.width, "center")
 
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.setFont(self.Title.fontFill)
-	love.graphics.printf(self.Title.text, self.Title.x, self.Title.y, 288, "center")
+	love.graphics.printf(self.Title.text, self.Title.x, self.Title.y, Screen.width, "center")
 	
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.setFont(self.Title.fontOutline)
-	love.graphics.printf(highScore, self.Title.x, self.Title.y * 2, 288, "center")
+	love.graphics.printf(highScore, self.Title.x, self.Title.y * 2, Screen.width, "center")
 
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.setFont(self.Title.fontFill)
-	love.graphics.printf(highScore, self.Title.x - 2, (self.Title.y * 2) + 2, 288, "center")
+	love.graphics.printf(highScore, self.Title.x - 2, (self.Title.y * 2) + 2, Screen.width, "center")
 
 	PlayButton:draw()
 	ExitButton:draw()
